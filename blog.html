@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Earth Movers</title>
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-main">
+            <img style="width: 60px; height: 60px; border-radius: 50%;" src="images/logo.webp" alt="">
+            <div class="logo">ACN EARTHMOVERS</div>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <a href="quote.html" class="cta-button">Get a Quote</a>
+            </ul>
+        </nav>
+    
+    </header>
+
+
+    <section class="blog">
+        <h2>Our Blog</h2>
+        <div class="blog-post">
+            <h3><a href="#">The Importance of Proper Site Preparation</a></h3>
+            <p>Site preparation is a crucial step in any construction project. It ensures that the ground is stable and ready for building. In this post, we discuss the key aspects of site preparation and why it matters.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3><a href="#">How to Choose the Right Excavator for Your Project</a></h3>
+            <p>Choosing the right excavator can make a significant difference in the efficiency of your project. In this article, we provide tips on selecting the best excavator based on your specific needs.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3><a href="#">Top 5 Earth Moving Equipment for Construction</a></h3>
+            <p>In this post, we highlight the top five earth-moving equipment that every construction site should have. From excavators to bulldozers, learn about the essential tools for your next project.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3><a href="#">Safety Tips for Operating Heavy Machinery</a></h3>
+            <p>Operating heavy machinery comes with its own set of risks. In this article, we share essential safety tips to ensure that you and your team stay safe while working on-site.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ACN EarthMovers. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="https://www.instagram.com/ckrishnaiahannaluru?igsh=Y3cxZTgzZmNvMDU4">Instagram</a>
+                <a href="https://www.linkedin.com/in/chaithanya-sai-kumar-annaluru">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links li a");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Auto-close menu when clicking a link
+    navItems.forEach(item => {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+
+    // Close menu if clicked outside of it
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

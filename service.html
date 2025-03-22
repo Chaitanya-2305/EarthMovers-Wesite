@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Earth Movers</title>
+    <link rel="stylesheet" href="service.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-main">
+            <img style="width: 60px; height: 60px; border-radius: 50%;" src="images/logo.webp" alt="">
+            <div class="logo">ACN EARTHMOVERS</div>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <a href="quote.html" class="cta-button">Get a Quote</a>
+            </ul>
+        </nav>
+    
+    </header>
+
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="images/excavation.jpg" alt="Excavation" class="service-icon">
+                <h3>Excavation</h3>
+                <p>We provide professional excavation services for residential and commercial projects, ensuring a solid foundation for your construction needs.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/grading.jpg" alt="Grading" class="service-icon">
+                <h3>Grading</h3>
+                <p>Our grading services ensure that your site is level and ready for construction, optimizing drainage and site preparation.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/demolition.jpg" alt="Demolition" class="service-icon">
+                <h3>Demolition</h3>
+                <p>We offer safe and efficient demolition services, handling everything from small structures to large buildings with care and precision.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/site prep.jpg" alt="Site Preparation" class="service-icon">
+                <h3>Site Preparation</h3>
+                <p>Our site preparation services include clearing, grading, and excavation to ensure your site is ready for construction.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/grading.jpg" alt="Hitachi Excavator Services" class="service-icon">
+                <h3>Hitachi Excavator Services</h3>
+                <p>Utilizing state-of-the-art Hitachi excavators, we provide efficient and reliable excavation services tailored to your project needs.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/doz.jpg" alt="Hitachi Bulldozer Operations" class="service-icon">
+                <h3>Hitachi Bulldozer Operations</h3>
+                <p>Our experienced operators use Hitachi bulldozers for grading, land clearing, and other heavy-duty tasks, ensuring quality results.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/land pre.jpg" alt="Land Clearing" class="service-icon">
+                <h3>Land Clearing</h3>
+                <p>We provide comprehensive land clearing services to prepare your site for construction, including tree removal and debris disposal.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/soil-comp.webp" alt="Soil Compaction" class="service-icon">
+                <h3>Soil Compaction</h3>
+                <p>Our soil compaction services ensure a stable foundation for your construction project, enhancing the durability of your structures.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/maint.webp" alt="Full Maintenance Contracts" class="service-icon">
+                <h3>Full Maintenance Contracts</h3>
+                <p>We offer comprehensive maintenance contracts to keep your equipment running smoothly and efficiently.</p>
+            </div>
+        </section>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 ACN EarthMovers. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/share/1ANRZTouem/?mibextid=wwXIfr">Facebook</a>
+            <a href="https://www.instagram.com/ckrishnaiahannaluru?igsh=Y3cxZTgzZmNvMDU4">Instagram</a>
+            <a href="https://www.linkedin.com/in/chaithanya-sai-kumar-annaluru">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links li a");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Auto-close menu when clicking a link
+    navItems.forEach(item => {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+
+    // Close menu if clicked outside of it
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+});
+</script>
+</body>
+</html>

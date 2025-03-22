@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Movers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-main">
+            <img style="width: 60px; height: 60px; border-radius: 50%;" src="images/logo.webp" alt="">
+            <div class="logo">ACN EARTHMOVERS</div>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <a href="quote.html" class="cta-button">Get a Quote</a>
+            </ul>
+        </nav>
+    
+    </header>
+    <div class="main">
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Trusted Partner in Earth Moving</h1>
+                <p>Reliable Equipment and Expert Services</p>
+                <a href="service.html" class="cta-button">Explore Our Services</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">Excavation</div>
+                <div class="service-item">Grading</div>
+                <div class="service-item">Demolition</div>
+                <div class="service-item">Site Preparation</div>
+                <div class="service-item">Hitachi Excavator Services</div>
+                <div class="service-item">Hitachi Bulldozer Operations</div>
+                <div class="service-item">Land Clearing</div>
+                <div class="service-item">Soil Compaction</div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-item">"Great service and reliable equipment!"</div>
+            <div class="testimonial-item">"Professional team and timely delivery!"</div>
+            <div class="testimonial-item">"The Hitachi excavators made our project a breeze!"</div>
+            <div class="testimonial-item">"Exceptional quality and support throughout the project!"</div>
+            <div class="testimonial-item">"Highly recommend for any earth-moving needs!"</div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 ACN EarthMovers. All rights reserved.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/share/1ANRZTouem/?mibextid=wwXIfr">Facebook</a>
+                    <a href="https://www.instagram.com/ckrishnaiahannaluru?igsh=Y3cxZTgzZmNvMDU4">Instagram</a>
+                    <a href="https://www.linkedin.com/in/chaithanya-sai-kumar-annaluru">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links li a");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Auto-close menu when clicking a link
+    navItems.forEach(item => {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+
+    // Close menu if clicked outside of it
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+});
+    </script>
+</body>
+</html>

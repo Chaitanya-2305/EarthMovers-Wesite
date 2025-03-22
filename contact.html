@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Earth Movers</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-main">
+            <img style="width: 60px; height: 60px; border-radius: 50%;" src="images/logo.webp" alt="">
+            <div class="logo">ACN EARTHMOVERS</div>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <a href="quote.html" class="cta-button">Get a Quote</a>
+            </ul>
+        </nav>
+    
+    </header>
+
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <h3>Address</h3>
+                <p>Parlapalli,Podalakur<br>Nellore, Andhra Pradesh, 524345</p>
+            </div>
+            <div class="info-item">
+                <h3>Phone</h3>
+                <p>(91+) 7993181899 <br>
+                    9440107032</p>
+            </div>
+            <div class="info-item">
+                <h3>Email</h3>
+                <p><a style="text-decoration: none; color: rgb(44, 44, 44);" href="mailto:info@earthmovers.com">ack.annaluru1982@gmail.com</a></p>
+            </div>
+        </div>
+
+        <form action="#" name="submit-to-google-sheet" class="contact-form">
+            <h3>Send Us a Message</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="name">Mobile Number:</label>
+            <input type="text" id="name" name="number" required>
+
+            <label for="name">Subject:</label>
+            <input type="text" id="name" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="cta-button" onclick="sendEmail()">Submit</button>
+        </form>
+        <span id="msg"></span>
+
+        <div class="map">
+            <h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.3379179079893!2d79.75327487514437!3d14.3505952289593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4cea1bc4d71b35%3A0xe04d58d6437cd3ba!2sParlapalli%2C%20Andhra%20Pradesh%20524345!5e0!3m2!1sen!2sin!4v1742552468532!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ACN EarthMovers. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/share/1ANRZTouem/?mibextid=wwXIfr">Facebook</a>
+                <a href="https://www.instagram.com/ckrishnaiahannaluru?igsh=Y3cxZTgzZmNvMDU4">Instagram</a>
+                <a href="https://www.linkedin.com/in/chaithanya-sai-kumar-annaluru">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzL7CdIxQeODzKojXylvh77uBkXVSPORGkEBunxS_vd141Ij8WnQH98p0rIYo7gxHTE/exec';
+            const form = document.querySelector('form[name="submit-to-google-sheet"]');
+            const msgSpan = document.getElementById("msg"); // Renamed for clarity
+    
+            if (!form) {
+                console.error("Form not found! Make sure the form has name='submit-to-google-sheet'.");
+                return;
+            }
+    
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+    
+                // Show loading message
+                msgSpan.innerHTML = "Sending...";
+                msgSpan.style.color = "black";
+    
+                fetch(scriptURL, { method: "POST", body: new FormData(form) })
+                    .then(response => response.json()) // Ensure response is JSON
+                    .then(data => {
+                        console.log("Response from server:", data);
+                        msgSpan.innerHTML = "Message sent successfully!";
+                        msgSpan.style.color = "lightgreen";
+    
+                        setTimeout(() => {
+                            msgSpan.innerHTML = "";
+                        }, 5000);
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error("Error!", error.message);
+                        msgSpan.innerHTML = "Failed to send. Try again!";
+                        msgSpan.style.color = "red";
+                    });
+            });
+        });
+
+    
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links li a");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Auto-close menu when clicking a link
+    navItems.forEach(item => {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+
+    // Close menu if clicked outside of it
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
